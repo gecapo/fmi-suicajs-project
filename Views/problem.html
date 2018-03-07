@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- #region CUSTOM CSS-->
+    <link rel="stylesheet" href="./../Content/Css/style.css">
+    <!-- #endregion -->
+    <title>Задачи</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="container">
+        <div class="card w-75 mx-auto">
+            <h5 class="card-header text-center">Задачи:</h5>
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="./../index.html">Съдържание</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Задачи</li>
+                    </ol>
+                </nav>
+                <div>
+                    <h5 class="card-title">Задача 1:</h5>
+                    <p class="card-text">Разликата от катетите на правоъгълен триъгълник е равна на диаметъра на вписаната в него окръжност. Хипотенузата
+                        му е 8 см. Намерете по малкия катет и ъглите на триъгълника.</p>
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Решение:
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <br>
+                                <div class="text-center">
+                                    <img src="./../Content/Img/ProblemOne.png" class="img-thumbnail float-center">
+                                    <div class="card-body">
+                                        Изпозваме стандатните означения. d = 2r = 2(p−c) = 2.(a+b−c)/2 = a+b−c = a+b−8
+                                        <br> Нека a≥b
+                                        <br> => a−b=a+b−8;
+                                        <br> => 2b=8;
+                                        <br> => b=4;
+                                        <br> => b=1/2c;
+                                        <br> => ∠ABC=30∘;
+                                        <br> => ∠BAC=60∘;
+                                        <br> => b=12c;
+                                        <br>(Катет срещу ∠30∘ е половината от хипотенузата)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="card-title">Задача 2:</h5>
+                    <p class="card-text">За разностранен триъгълник ABC са въведени дължина на страна BC=a и отношение между трите му ъгъла k:m:n.
+                        Да се изчисли лице на описаната около триъгълника окръжност.</p>
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                        Решение:
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <br>
+                                <div class="text-center">
+                                    <img src="./../Content/Img/ProblemTwo.png" class="img-thumbnail float-center">
+                                    <div class="card-body">
+                                        Изпозваме стандатните означения. Представяме ъглите на триъгълника:
+                                        <br> α=k*x
+                                        <br> β=m*x
+                                        <br> γ=n*x
+                                        <br> Сумата от вътрешните ъгли на триъгълник е 180°
+                                        <br> kx+mx+nx=180°
+                                        <br> x=180/(k+m+n)
+                                        <br> Изчисляваме ъглите на триъгълника:
+                                        <br> α=k*x
+                                        <br> β=m*x
+                                        <br> γ=n*x
+                                        <br> От синусова теорема радиус на описаната окръжност R
+                                        <br> a/sin(α)=2*R
+                                        <br> Изчисляваме радиус на описаната окръжност R:
+                                        <br> R=a/(2*sin(α))
+                                        <br> Изчисляваме лице на описаната окръжност S:
+                                        <br> So=π*R2=π*(a/(2*sin(α)))^2
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h5 class="card-title">Задача 3:</h5>
+                    <p class="card-text">За триъгълника ABC са въведени дължини на трите му страни a,b и c. Триъгълникът е едновременно вписан
+                        и описан около окръжност. Да се изчисли разстоянието между центровете на вписаната т.Q и описаната
+                        т.O около триъгълника окръжност.
+                    </p>
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                                        Решение:
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <br>
+                                <div class="text-center">
+                                    <img src="./../Content/Img/ProblemThree.png" class="img-thumbnail float-center">
+                                    <div class="card-body">
+                                        Ще ползваме една от теоремите на Ойлер.
+                                        <br> Ойлеровата права е права в триъгълник и преминава през пресечната точка на височините,
+                                        на медианите и през центъра на описаната окръжност.
+                                        <br> Формула на Ойлер (за намиране на разстоянието между центровете на вписаната и описаната
+                                        окръжност на триъгълник). Ако с d отбележим разстоянието между центровете на вписаната
+                                        (т.Q) и описаната окръжност на триъгълник (т.O), с R - радиуса на описаната окръжност,
+                                        а с r - радиуса на вписаната окръжност, то разстоянието между двата центъра е:
+                                        <br> d =√( R2 - 2*R*r)
+                                        <br> Едно от решението на задачата изисква изчисляване на лице (по формула на Херон),
+                                        изчисляване на радиус на вписаната окръжност и радиус на описаната окръжност.
+                                        <br> Полупериметър на търиъгълника p = (a+b+c)/2
+                                        <br> Лицето на триъгълника изчисляваме по формулата на Херон S=√(p*(p-a)*(p-b)*(p-c))
+                                        <br> Центърът на вписаната окръжност е пресечната точка на трите ъглополовящи в триъгълника.
+                                        <br> Радиусът на вписаната окръжност е: r=(2*S)/(a+b+c);
+                                        <br> Центърът на описаната окръжност е пресечната точка на трите симетрали на страните
+                                        на триъгълника.
+                                        <br> Радиусът на описаната окръжност е: R=a*b*c/(4*S);
+                                        <br> Търсеното разстояние между двата центъра е: d =√( R2 - 2*R*r)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="container text-center">
+            <p>&trade; Georgi Kalinkov</p>
+        </footer>
+    </div>
+
+    <!-- #region JS-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- #endregion -->
+</body>
+
+</html>

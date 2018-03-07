@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- #region CUSTOM CSS-->
+    <link rel="stylesheet" href="./../Content/Css/style.css">
+    <!-- #endregion -->
+
+    <!-- #region CUSTOM JS-->
+    <script src="./../Content/suica.min.js"></script>
+    <script>
+        function Init() {
+            suica = new Suica();
+            orthographic(-10000, 10000); //размерност
+            lookAt([0, 0, 100], [0, 0, 0], [0, 1, 0]); //точка на гледане
+
+            // Създаване на мрежа            
+            gridStyle = { color: [0.7, 0.7, 0.5] };
+            for (var i = -300; i <= 300; i += 25) {
+                segment([i, -200, -1], [i, 200, -1]).custom(gridStyle);
+            }
+            for (var i = -200; i <= 200; i += 25) {
+                segment([-300, i, -1], [300, i, -1]).custom(gridStyle);
+            }
+
+            // Създаване на триъгълника
+            A = sphere([-100, 0, 0], 5);
+            B = sphere([100, 0, 0], 5);
+            C = sphere([50, 85, 0], 5);
+
+            // Позициониране на върховете
+            setPeaks();
+            // Чертае страните, окръжноста, ъглополовящите.
+            drawElse();
+
+        }
+
+        function drawElse() {
+            triangleStyle = { color: [0.6, 0, 0] };
+            AB = segment(A.center, B.center).custom(triangleStyle);
+            BC = segment(B.center, C.center).custom(triangleStyle);
+            CA = segment(C.center, A.center).custom(triangleStyle);
+
+            circleO = circle([37, 36, 0], 35).custom({ mode: Suica.LINE });
+
+            line(A.center, circleO.center);
+            line(B.center, circleO.center);
+            line(C.center, circleO.center);
+
+            
+            var el = document.getElementById('O');
+            var position = circleO.getPosition();
+            el.style.left = position[0] - 345 + "px";
+            el.style.top = position[1] - 50 + "px";
+        }
+
+        function setPeaks() {
+            var el = document.getElementById('A');
+            var position = A.getPosition();
+            el.style.left = position[0] - 345 + "px";
+            el.style.top = position[1] - 50 + "px";
+
+
+            el = document.getElementById('B');
+            position = B.getPosition();
+            el.style.left = position[0] - 345 + "px";
+            el.style.top = position[1] - 50 + "px";
+
+            el = document.getElementById('C');
+            position = C.getPosition();
+            el.style.left = position[0] - 350 + "px";
+            el.style.top = position[1] - 75 + "px";
+        }
+
+    </script>
+    <!-- #endregion -->
+
+    <title>Урок: Вписана около триъгълник окръжност.</title>
+</head>
+
+<body onload="Init()">
+    <br>
+    <br>
+    <div class="container">
+        <div class="card w-75 mx-auto">
+            <h5 class="card-header text-center">Урок: Вписана около триъгълник окръжност:</h5>
+            <div class="card-body">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="./../index.html">Съдържание</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Урок 2</li>
+                    </ol>
+                </nav>
+                <h5 class="card-title d-flex justify-content-center">
+                    <canvas width="400" height="300">
+                    </canvas>
+                    <div id="A" class="peak">A</div>
+                    <div id="B" class="peak">B</div>
+                    <div id="C" class="peak">C</div>
+                    <div id="O" class="peak">O</div>
+                </h5>
+                <p class="card-text">
+                    <p>Вписана в триъгълник окръжност е окръжността с център пресечната точка на ъглополовящите на ъглите на
+                        триъгълнока и радиус, равен на разстоянието от тази точка до коя да е от страните му.</p>
+                    <p>Тя се допира до всяка една от страните на триъгълника.</p>
+                    <p>Във всеки триъгълник може да се опише окръжност.</p>
+                    <p>Обикновено радиусът на вписаната окръжност се бележи с малката латинска буква r.</p>
+                    <p>Радиусите на вписаните в триъгълник окръжности са пряко свързани с лицето на триъгълника. Ако S е лицето
+                        на триъгълника, а дължините на страните на триъгълника са означени с a, b и c, радиусът на вътрешновписаната
+                        окръжност може да се изрази като 2S/(a+b+c).:
+                        <strong>r = cotg(180°/3)·a/2</strong>
+                    </p>
+                    <p>Aко в правоъгълен триъгълник означим дължините на страните с a, b и c (c е дължината на хипотенузата),
+                        радиусът на вътрешновписаната окръжност може да се изрази като
+                        <strong>(a+b-c)/2</strong>.</p>
+                </p>
+            </div>
+        </div>
+        <footer class="container text-center">
+            <p>&trade; Georgi Kalinkov</p>
+        </footer>
+    </div>
+</body>
+
+</html>

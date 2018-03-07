@@ -1,0 +1,11 @@
+body {
+    background-image: url("../Img/blueprint-final.png");
+    background-color: #cccccc;
+ }
+
+ .peak {
+	position:absolute;
+	color:black;
+	background-color:transparent;
+	pointer-events: none;
+}
